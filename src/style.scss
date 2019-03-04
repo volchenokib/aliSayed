@@ -1,0 +1,104 @@
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+// Typo
+h2 {
+	font-size: 45px;
+}
+
+h3 {
+	font-size: 42px;
+}
+
+h4 {
+	font-size: 40px;
+}
+
+h2,
+h3,
+h4 {
+	font-weight: 200;
+	margin-top: 0;
+	b {
+		font-weight: 900;
+	}
+}
+
+p {
+	font-size: 15.57px;
+	line-height: 28px;
+	margin-bottom: 0;
+}
+
+a {
+	border: 1px solid #ffffff;
+	border-radius: 10px;
+	color: #ffffff;
+	display: inline-block;
+	padding: 10px 15px;
+	text-decoration: none;
+}
+
+a,
+input,
+textarea {
+	font-size: 16.57px;
+}
+
+.grid-item {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&-bg {
+		background-image: url(./img/bg.png);
+	}
+	&-gray {
+		background-color: #f3f3f3;
+	}
+	&-blue {
+		background-image: url(./img/bg_blue.png);
+		color: #ffffff;
+	}
+	&-beige {
+		background-image: url(./img/bg_beige.png);
+	}
+	&-black {
+		background-image: url(./img/bg_black.png);
+		color: #ffffff;
+	}
+	&-human {
+		background-image: url(./img/bg_human.png);
+		color: #ffffff;
+	}
+	&-green {
+		background-image: url(./img/bg_green.png);
+		color: #ffffff;
+	}
+}
+
+.form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: 620px;
+
+	input {
+		box-sizing: border-box;
+		width: 48%;
+	}
+
+	textarea {
+		width: 100%;
+	}
+
+	input,
+	textarea {
+		background-color: transparent;
+		border: 1px solid #ffffff;
+		border-radius: 10px;
+		margin-bottom: 12px;
+		padding: 10px 15px;
+	}
+}
