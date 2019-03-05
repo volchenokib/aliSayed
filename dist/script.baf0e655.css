@@ -114,6 +114,10 @@ textarea {
   grid-area: g;
 }
 
+.menu {
+  margin-bottom: 60px;
+}
+
 .form {
   display: flex;
   flex-wrap: wrap;
