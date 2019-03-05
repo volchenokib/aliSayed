@@ -1,5 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
@@ -47,35 +49,53 @@ textarea {
   font-size: 16.57px;
 }
 
+.grid {
+  display: grid;
+  grid-template-areas: "a a a a a a b b b" "c c c c d d d d d" "c c c c e e e e e" "f f f g g g g g g";
+}
+
 .grid-item {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 40px 50px 50px 50px;
 }
 .grid-item-bg {
   background-image: url(bg.a3e0843c.png);
+  color: #ffffff;
+  grid-area: a;
 }
 .grid-item-gray {
   background-color: #f3f3f3;
+  grid-area: b;
 }
 .grid-item-blue {
   background-image: url(bg_blue.fc665d2c.png);
   color: #ffffff;
+  grid-area: c;
 }
 .grid-item-beige {
   background-image: url(bg_beige.c8a0726f.png);
+  grid-area: d;
 }
 .grid-item-black {
   background-image: url(bg_black.e6bb7fd4.png);
   color: #ffffff;
+  grid-area: e;
 }
 .grid-item-human {
   background-image: url(bg_human.71dd2eaa.png);
   color: #ffffff;
+  grid-area: f;
 }
 .grid-item-green {
   background-image: url(bg_green.eea65f99.png);
   color: #ffffff;
+  grid-area: g;
+}
+
+.menu {
+  margin-bottom: 60px;
 }
 
 .form {

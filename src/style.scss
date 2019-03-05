@@ -1,5 +1,7 @@
 body {
 	font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 // Typo
@@ -46,36 +48,58 @@ textarea {
 	font-size: 16.57px;
 }
 
+.grid {
+	display: grid;
+	grid-template-areas:
+		"a a a a a a b b b"
+		"c c c c d d d d d"
+		"c c c c e e e e e"
+		"f f f g g g g g g";
+}
+
 .grid-item {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	padding: 40px 50px 50px 50px;
 
 	&-bg {
 		background-image: url(./img/bg.png);
+		color: #ffffff;
+		grid-area: a;
 	}
 	&-gray {
 		background-color: #f3f3f3;
+		grid-area: b;
 	}
 	&-blue {
 		background-image: url(./img/bg_blue.png);
 		color: #ffffff;
+		grid-area: c;
 	}
 	&-beige {
 		background-image: url(./img/bg_beige.png);
+		grid-area: d;
 	}
 	&-black {
 		background-image: url(./img/bg_black.png);
 		color: #ffffff;
+		grid-area: e;
 	}
 	&-human {
 		background-image: url(./img/bg_human.png);
 		color: #ffffff;
+		grid-area: f;
 	}
 	&-green {
 		background-image: url(./img/bg_green.png);
 		color: #ffffff;
+		grid-area: g;
 	}
+}
+
+.menu {
+	margin-bottom: 60px;
 }
 
 .form {
