@@ -26,6 +26,9 @@ h4 {
 	b {
 		font-weight: 900;
 	}
+	@media (max-width: 768px) {
+		font-size: 30px;
+	}
 }
 
 p {
@@ -69,6 +72,10 @@ textarea {
 		'c c c c d d d d d'
 		'c c c c e e e e e'
 		'f f f g g g g g g';
+	@media (max-width: 768px) {
+		grid-template-areas: 'a' 'b' 'c' 'd' 'e' 'f' 'g';
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	}
 }
 
 .grid-item {
@@ -80,6 +87,9 @@ textarea {
 	&_bg {
 		background-image: url(./img/bg.png);
 		grid-area: a;
+		@media (max-width: 768px) {
+			min-height: 300px;
+		}
 	}
 	&_gray {
 		background-color: #f3f3f3;
@@ -109,12 +119,22 @@ textarea {
 	&_human {
 		background-image: url(./img/bg_human.png);
 		color: #ffffff;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		grid-area: f;
+		min-height: 615px h3 {
+			margin-bottom: 0;
+		}
 	}
 	&_green {
 		background-image: url(./img/bg_green.png);
 		color: #ffffff;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		grid-area: g;
+		min-height: 615px;
 	}
 }
 
@@ -179,6 +199,9 @@ textarea {
 		padding: 0;
 	}
 	&__item {
+		height: 45px;
+		margin-right: 50px;
+		width: 45px;
 	}
 	&__icon {
 		background-position: center center;
@@ -186,9 +209,7 @@ textarea {
 		background-size: contain;
 		border: none;
 		box-sizing: border-box;
-		height: 45px;
-		margin-right: 10px;
-		width: 45px;
+		margin: 0;
 		&--fb {
 			background-color: #335bb3;
 			background-image: url(./img/fb.svg);
@@ -210,6 +231,6 @@ textarea {
 	background-repeat: no-repeat;
 	display: block;
 	height: 90px;
-	margin-bottom: 25px;
+	margin-bottom: 5px;
 	width: 90px;
 }
