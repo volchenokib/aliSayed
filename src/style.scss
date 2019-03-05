@@ -1,5 +1,10 @@
+// vars
+$breakepointL: 1024px;
+$breakepointS: 768px;
+$breakepointXS: 414px;
+
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 	padding: 0;
 	margin: 0;
 }
@@ -23,10 +28,12 @@ h4 {
 	font-weight: 200;
 	letter-spacing: 1px;
 	margin-top: 0;
+	text-transform: capitalize;
 	b {
 		font-weight: 900;
+		text-transform: capitalize;
 	}
-	@media (max-width: 768px) {
+	@media (max-width: $breakepointL) {
 		font-size: 30px;
 	}
 }
@@ -35,6 +42,10 @@ p {
 	font-size: 15.57px;
 	line-height: 28px;
 	margin-bottom: 0;
+	@media (max-width: $breakepointL) {
+		font-size: 13px;
+		line-height: 22px;
+	}
 }
 
 a {
@@ -43,14 +54,38 @@ a {
 	color: #ffffff;
 	display: inline-block;
 	padding: 15px 45px;
-	margin-top: 85px;
+	// margin-top: 85px;
+	margin-top: 8%;
 	text-decoration: none;
+	@media (max-width: $breakepointS) {
+		font-size: 13px !important;
+	}
 }
 
 a,
 input,
-textarea {
+textarea,
+button {
 	font-size: 16.57px;
+}
+
+.button {
+	&_right {
+		margin-left: auto;
+	}
+	background-color: transparent;
+	border: 1px solid #ffffff;
+	border-radius: 10px;
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	padding: 15px 0;
+	margin-top: 20px;
+	min-width: 190px;
+	text-decoration: none;
+	@media (max-width: $breakepointS) {
+		font-size: 13px !important;
+	}
 }
 
 .menu {
@@ -68,12 +103,16 @@ textarea {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-areas:
-		'a a a a a a b b b'
-		'c c c c d d d d d'
-		'c c c c e e e e e'
-		'f f f g g g g g g';
-	@media (max-width: 768px) {
-		grid-template-areas: 'a' 'b' 'c' 'd' 'e' 'f' 'g';
+		"a a a a a a b b b"
+		"c c c c d d d d d"
+		"c c c c e e e e e"
+		"f f f g g g g g g";
+	@media (max-width: $breakepointL) {
+		grid-template-areas: "b" "b" "c" "d" "e" "f" "g";
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	}
+	@media (max-width: $breakepointS) {
+		grid-template-areas: "b" "b" "c" "d" "e" "f" "g";
 		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	}
 }
@@ -83,12 +122,15 @@ textarea {
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding: 60px 55px;
+	@media (max-width: $breakepointS) {
+		padding: 40px 35px;
+	}
 
 	&_bg {
 		background-image: url(./img/bg.png);
 		grid-area: a;
-		@media (max-width: 768px) {
-			min-height: 300px;
+		@media (max-width: $breakepointL) {
+			display: none;
 		}
 	}
 	&_gray {
@@ -101,6 +143,9 @@ textarea {
 		grid-area: c;
 		div {
 			margin-bottom: 70px;
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 	&_beige {
@@ -110,11 +155,17 @@ textarea {
 			border: 1px solid #000000;
 			color: #000000;
 		}
+		@media (max-width: $breakepointS) {
+			text-align: center;
+		}
 	}
 	&_black {
 		background-image: url(./img/bg_black.png);
 		color: #ffffff;
 		grid-area: e;
+		@media (max-width: $breakepointS) {
+			text-align: center;
+		}
 	}
 	&_human {
 		background-image: url(./img/bg_human.png);
@@ -123,8 +174,11 @@ textarea {
 		flex-direction: column;
 		justify-content: space-between;
 		grid-area: f;
-		min-height: 615px h3 {
+		h3 {
 			margin-bottom: 0;
+		}
+		@media (max-width: $breakepointS) {
+			text-align: center;
 		}
 	}
 	&_green {
@@ -135,6 +189,18 @@ textarea {
 		justify-content: space-between;
 		grid-area: g;
 		min-height: 615px;
+		@media (max-width: $breakepointL) {
+			min-height: inherit;
+		}
+		@media (max-width: $breakepointS) {
+			text-align: center;
+		}
+
+		form {
+			textarea {
+				padding: 10px;
+			}
+		}
 	}
 }
 
@@ -148,47 +214,37 @@ textarea {
 	justify-content: space-between;
 	max-width: 620px;
 
+	input,
+	textarea {
+		background-color: transparent;
+		border: 1px solid #ffffff;
+		border-radius: 10px;
+		color: #ffffff;
+		padding: 10px;
+		margin-bottom: 12px;
+		&::placeholder {
+			color: #ffffff;
+		}
+	}
+
 	input {
 		box-sizing: border-box;
 		width: 48%;
 		padding: 10px 15px;
-		&::-webkit-input-placeholder {
-			color: #ffffff;
-		}
-		&::-ms-input-placeholder {
-			color: #ffffff;
-		}
-		&::-ms-input-placeholder {
-			color: #ffffff;
-		}
-		&::placeholder {
-			color: #ffffff;
+		@media (max-width: $breakepointS) {
+			&:first-child {
+				margin-right: 5px;
+			}
 		}
 	}
 
 	textarea {
 		min-height: 125px;
 		width: 100%;
-		&::-webkit-textarea-placeholder {
-			color: #ffffff;
-		}
-		&::-ms-textarea-placeholder {
-			color: #ffffff;
-		}
-		&::-ms-textarea-placeholder {
-			color: #ffffff;
-		}
-		&::placeholder {
-			color: #ffffff;
-		}
 	}
 
-	input,
-	textarea {
-		background-color: transparent;
-		border: 1px solid #ffffff;
-		border-radius: 10px;
-		margin-bottom: 12px;
+	@media (max-width: $breakepointS) {
+		justify-content: center;
 	}
 }
 
@@ -231,6 +287,12 @@ textarea {
 	background-repeat: no-repeat;
 	display: block;
 	height: 90px;
-	margin-bottom: 5px;
+	margin-bottom: 25px;
 	width: 90px;
+	@media (max-width: $breakepointS) {
+		background-size: cover;
+		height: 70px;
+		margin: 0 auto 25px;
+		width: 70px;
+	}
 }
