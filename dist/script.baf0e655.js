@@ -176,7 +176,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./img\\bg.png":[["bg.a3e0843c.png","src/img/bg.png"],"src/img/bg.png"],"./img\\bg_blue.png":[["bg_blue.fc665d2c.png","src/img/bg_blue.png"],"src/img/bg_blue.png"],"./img\\bg_beige.png":[["bg_beige.c8a0726f.png","src/img/bg_beige.png"],"src/img/bg_beige.png"],"./img\\bg_black.png":[["bg_black.e6bb7fd4.png","src/img/bg_black.png"],"src/img/bg_black.png"],"./img\\bg_human.png":[["bg_human.71dd2eaa.png","src/img/bg_human.png"],"src/img/bg_human.png"],"./img\\bg_green.png":[["bg_green.eea65f99.png","src/img/bg_green.png"],"src/img/bg_green.png"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/script.js":[function(require,module,exports) {
+},{"./img\\menu.svg":[["menu.b7518f9f.svg","src/img/menu.svg"],"src/img/menu.svg"],"./img\\bg.png":[["bg.a3e0843c.png","src/img/bg.png"],"src/img/bg.png"],"./img\\bg_blue.png":[["bg_blue.fc665d2c.png","src/img/bg_blue.png"],"src/img/bg_blue.png"],"./img\\bg_beige.png":[["bg_beige.c8a0726f.png","src/img/bg_beige.png"],"src/img/bg_beige.png"],"./img\\bg_black.png":[["bg_black.e6bb7fd4.png","src/img/bg_black.png"],"src/img/bg_black.png"],"./img\\bg_human.png":[["bg_human.71dd2eaa.png","src/img/bg_human.png"],"src/img/bg_human.png"],"./img\\bg_green.png":[["bg_green.eea65f99.png","src/img/bg_green.png"],"src/img/bg_green.png"],"./img\\fb.svg":[["fb.21eed844.svg","src/img/fb.svg"],"src/img/fb.svg"],"./img\\dr.svg":[["dr.2eaf5ce0.svg","src/img/dr.svg"],"src/img/dr.svg"],"./img\\tw.svg":[["tw.080463e0.svg","src/img/tw.svg"],"src/img/tw.svg"],"./img\\logo.png":[["logo.a0487e91.png","src/img/logo.png"],"src/img/logo.png"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/script.js":[function(require,module,exports) {
 "use strict";
 
 require("./style.scss");
@@ -209,7 +209,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50122" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61071" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
