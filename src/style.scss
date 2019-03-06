@@ -4,7 +4,7 @@ $breakepointS: 768px;
 $breakepointXS: 414px;
 
 body {
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 	padding: 0;
 	margin: 0;
 }
@@ -54,7 +54,6 @@ a {
 	color: #ffffff;
 	display: inline-block;
 	padding: 15px 45px;
-	// margin-top: 85px;
 	margin-top: 8%;
 	text-decoration: none;
 	@media (max-width: $breakepointS) {
@@ -103,16 +102,16 @@ button {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-areas:
-		"a a a a a a b b b"
-		"c c c c d d d d d"
-		"c c c c e e e e e"
-		"f f f g g g g g g";
+		'a a a a a a b b b'
+		'c c c c d d d d d'
+		'c c c c e e e e e'
+		'f f f g g g g g g';
 	@media (max-width: $breakepointL) {
-		grid-template-areas: "b" "b" "c" "d" "e" "f" "g";
+		grid-template-areas: 'b' 'b' 'c' 'd' 'e' 'f' 'g';
 		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	}
 	@media (max-width: $breakepointS) {
-		grid-template-areas: "b" "b" "c" "d" "e" "f" "g";
+		grid-template-areas: 'b' 'b' 'c' 'd' 'e' 'f' 'g';
 		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	}
 }
@@ -121,6 +120,7 @@ button {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	box-sizing: border-box;
 	padding: 60px 55px;
 	@media (max-width: $breakepointS) {
 		padding: 40px 35px;
@@ -182,13 +182,14 @@ button {
 		}
 	}
 	&_green {
-		background-image: url(./img/bg_green.png);
+		background-image: url(./img/bg_green_old.png);
 		color: #ffffff;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		grid-area: g;
 		min-height: 615px;
+		border: none;
 		@media (max-width: $breakepointL) {
 			min-height: inherit;
 		}
@@ -240,6 +241,7 @@ button {
 
 	textarea {
 		min-height: 125px;
+		resize: none;
 		width: 100%;
 	}
 
@@ -253,10 +255,13 @@ button {
 		display: flex;
 		list-style: none;
 		padding: 0;
+		@media (max-width: $breakepointS) {
+			justify-content: center;
+		}
 	}
 	&__item {
 		height: 45px;
-		margin-right: 50px;
+		margin-right: 5px;
 		width: 45px;
 	}
 	&__icon {
@@ -265,18 +270,18 @@ button {
 		background-size: contain;
 		border: none;
 		box-sizing: border-box;
+		height: 45px;
 		margin: 0;
+		padding: 0;
+		width: 45px;
 		&--fb {
-			background-color: #335bb3;
 			background-image: url(./img/fb.svg);
 		}
 		&--dr {
-			background-color: #e64894;
 			background-image: url(./img/dr.svg);
 		}
 
 		&--tw {
-			background-color: #00b3ff;
 			background-image: url(./img/tw.svg);
 		}
 	}
